@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+.foot{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+    align-items: baseline;
+    margin-top: 200px;
+  background-color: black;
+  color: white;
+}
+.foot__lista{
+ text-decoration: none;
+ color: white;
+}
