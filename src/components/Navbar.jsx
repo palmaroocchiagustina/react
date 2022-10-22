@@ -133,7 +133,7 @@ export default function ResponsiveAppBar({color}) {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-       
+          
            <CartWidget/>
            
             <Menu
