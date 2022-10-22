@@ -57,9 +57,7 @@ export default function ResponsiveAppBar({color}) {
             }}
           >
           <img className='logo__navbar' src={logo}  width='90px' height='90px' alt='logonavbar'/>
-        
-          
-          
+      
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -70,6 +68,7 @@ export default function ResponsiveAppBar({color}) {
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
               color="inherit"
+              
             >
               
               <MenuIcon />

@@ -17,6 +17,7 @@ export default function Footer() {
    <button>
     <InstagramIcon
       fontSize='large'
+      
      
     />
    </button>
