@@ -6,7 +6,7 @@ export default function CartWidget() {
   return (
     <div>
         <button>
-            <AddShoppingCartIcon/>
+            <AddShoppingCartIcon />
         </button>
     </div>
   )

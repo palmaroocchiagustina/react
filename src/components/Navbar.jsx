@@ -38,7 +38,7 @@ export default function ResponsiveAppBar({color}) {
   };
 
   return (
-    <AppBar position="static" style={{backgroundColor: color}} >
+    <AppBar position="static" className='appbar' style={{backgroundColor: color}} >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -56,7 +56,7 @@ export default function ResponsiveAppBar({color}) {
               textDecoration: 'none',
             }}
           >
-          <img className='logo__navbar' src={logo}  width='80px' height='80px' alt='logonavbar'/>
+          <img className='logo__navbar' src={logo}  width='90px' height='90px' alt='logonavbar'/>
         
           
           
@@ -118,16 +118,18 @@ export default function ResponsiveAppBar({color}) {
             CHILL OUT
           
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box className='appbar' sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: 'white', display: 'block', fontSize: 15 }}
               >
                 {page}
+                
               </Button>
             ))}
+          
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>

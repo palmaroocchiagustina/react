@@ -10,7 +10,7 @@ export default function App() {
   <div>
     <Navbar color={"black"}/>
     <div>  
-      <ItemListContainer fondo={"grey"} greeting= {"BIENVENIDOS A CHILL OUT- PRENDAS DE DISEÑO"} />
+      <ItemListContainer fondo={"whitesmoke"} greeting= {"BIENVENIDOS A CHILL OUT- PRENDAS DE DISEÑO"} />
      </div>
     <Footer/>
   </div>
