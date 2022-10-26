@@ -16,7 +16,7 @@ import CartWidget from './CartWidget';
 const pages = ['Productos', 'Contacto'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-export default function ResponsiveAppBar({color}) {
+export default function Navbar({color}) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
