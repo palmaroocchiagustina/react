@@ -13,8 +13,11 @@ import logo from "../img/logo.png";
 import CartWidget from './CartWidget';
 
 
-const pages = ['Productos', 'Contacto'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const pages = [
+  {label: "Productos", link:"/productos"},
+  {label: "Contacto", link:"/contacto"},
+
+];
 
 export default function Navbar({color}) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -90,8 +93,10 @@ export default function Navbar({color}) {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                <MenuItem key={page.label} onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">
+                  <a href=  {page.link}>{page.label}</a>
+                 </Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -118,45 +123,18 @@ export default function Navbar({color}) {
           <Box className='appbar' sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
-                key={page}
+                key={page.label}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block', fontSize: 15 }}
               >
-                {page}
+              <a href= {page.link}> {page.label}</a>
                 
+               
               </Button>
             ))}
           
-          </Box>
-
-          <Box sx={{ flexGrow: 0 }}>
-          
-           <CartWidget/>
-           
-            <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-          
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
+         <CartWidget/>
+         </Box>
         </Toolbar>
       </Container>
     </AppBar>
