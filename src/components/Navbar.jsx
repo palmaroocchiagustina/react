@@ -93,7 +93,7 @@ export default function Navbar({color}) {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page.label} onClick={handleCloseNavMenu}>
+                <MenuItem  key={page.label} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">
                   <a href=  {page.link}>{page.label}</a>
                  </Typography>
@@ -127,7 +127,7 @@ export default function Navbar({color}) {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block', fontSize: 15 }}
               >
-              <a href= {page.link}> {page.label}</a>
+              <a className='appbar' href= {page.link}> {page.label}</a>
                 
                
               </Button>

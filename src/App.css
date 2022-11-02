@@ -42,8 +42,10 @@
   justify-content: flex-end;
   margin-right: 2vw;
   padding: 1.5vw;
-  
+  text-decoration: none;
+  color: white;  
 }
+
 .greeting{
 
 display: flex;
@@ -54,27 +56,3 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
 
 }
 
-.foot{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  justify-items: center;
-    align-items: baseline;
-    margin-top: 200px;
-  background-color: black;
-  color: white;
- 
-}
-.foot__lista{
-  display: flex;
-  flex-direction: column;
-    align-items: center;
-    margin-bottom: 1vw;
- text-decoration: none;
- color: white;
- font-size: 1.5vw;
-}
-.rrss{
-
-  display: flex;
-
-}

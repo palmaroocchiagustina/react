@@ -1,0 +1,40 @@
+
+
+[
+    {
+       "imagen":"remera.jpg",
+       "nombre":"Remera",
+       "precio":2000,
+       "id":1
+    },
+    {
+       "imagen":"toprayas.jpg",
+       "nombre":"Top rayas",
+       "precio":3000,
+       "id":2
+    },
+    {
+       "imagen":"jeans.jpg",
+       "nombre":"Jeans",
+       "precio":10000,
+       "id":3
+    },
+    {
+       "imagen":"campera.jpg",
+       "nombre":"Campera de jeans",
+       "precio":12000,
+       "id":4
+    },
+    {
+       "imagen":"zapatillas.jpg",
+       "nombre":"Zapatillas",
+       "precio":20000,
+       "id":5
+    },
+    {
+       "imagen":"blazer.jpg",
+       "nombre":"Blazer de lino",
+       "precio":20000,
+       "id":6
+    }
+ ]

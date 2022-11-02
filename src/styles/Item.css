@@ -1,0 +1,14 @@
+.cards{
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 40rem 2rem 40rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background-color: whitesmoke;
+    border-radius: 1rem;
+
+
+}
+

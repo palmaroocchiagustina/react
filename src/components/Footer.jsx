@@ -2,6 +2,7 @@ import React from 'react'
 import pagos from "../img/pagos.jpg";
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
+import '../styles/Footer.css'
 
 export default function Footer() {
   return (

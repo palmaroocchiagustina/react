@@ -1,9 +1,18 @@
 import React from 'react'
+import ItemCount from './ItemCount'
 
-export default function ItemListContainer({greeting, fondo}) {
+export default function ItemListContainer() {
+
+  const onAdd = (cantidad)=>{
+
+    alert(`Compraste ${cantidad} prendas`);
+    
+  }
+  
   return (
-    <div className='greeting' style={{backgroundColor: fondo}} >
-    <p> {greeting} </p>
+    <div>
+    <ItemCount initial={0} stock={6} onAdd={onAdd}/>
     </div>
   )
 }
+
