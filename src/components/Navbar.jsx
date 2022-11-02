@@ -9,7 +9,6 @@ import MenuItem from '@mui/material/MenuItem';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
-import logo from "../img/logo.png";
 import CartWidget from './CartWidget';
 
 
@@ -57,7 +56,7 @@ export default function Navbar({color}) {
               textDecoration: 'none',
             }}
           >
-          <img className='logo__navbar' src={logo}  width='90px' height='90px' alt='logonavbar'/>
+          <img className='logo__navbar' src='../img/logo.png'  width='90px' height='90px' alt='logonavbar'/>
       
           </Typography>
 
