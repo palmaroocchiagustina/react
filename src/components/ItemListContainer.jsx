@@ -16,15 +16,18 @@ export default function ItemListContainer() {
       setTimeout(() => {
         res(prendas);
       }, 2000);
-    });
+    })
 
     productosPromise.then((res) => {
       if (idcategoria) {
-        setProductos(res.filter((item) => item.categoria == idcategoria));
+        setProductos(res.filter((item) => item.categoria === idcategoria));
       } else {
         setProductos(res);
       }
-    });
+    })
+    .catch( (e)=>{
+      console.log(e);
+    })
   }, [idcategoria]);
 
   return (
@@ -34,53 +37,6 @@ export default function ItemListContainer() {
   );
 }
 
-
-
-
-
-/*import React ,{useState, useEffect} from 'react'
-import Item from './Item'
-
-
-export default function ItemListContainer() {
-
-  const [catalogo, setCatalogo] = useState([]);
-
-  useEffect( () => {
-  
-    fetch("../data.json")
-    .then(res=>res.json())
-    .then((resJson) =>{
-
-  setTimeout(() => {
-    
-    setCatalogo(resJson);
-  
-
-   }, 2000);
-  
-})
-.catch((e)=>{
-  console.log(e);
-})
-.finally(()=>{
-  console.log("finish");
-})
-},[])
-
-
- return (
-  <div>
-  {catalogo.map( (item)=>(
-
-  <div className="cards" key={item.id}>
-   <Item imagen={item.imagen} nombre={item.nombre} precio={item.precio} id={item.id}/>
-   </div>
-  ))}
-  </div>
-)}
- 
-*/
 
 
 

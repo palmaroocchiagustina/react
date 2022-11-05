@@ -1,58 +1,30 @@
 import React from 'react';
 import Item from "./Item";
 import { Grid } from '@mui/material';
+import "../styles/Item.css"
 
 export default function ItemList({productos}) {
-  //.log(productos);
+  
   return (
-    <div >
-    
-    {!productos.length && "Loading..."}
-    {productos.map((item) => (
-      <Item item={item}/>
-      
-    ))}
+    <div  className="cards" >
+     <Grid container spacing={2}>
+ 
+     {productos.map((item)=>{
 
+         return(
+          <Grid item xs={12} sm={6} md={4} key={item.id} >
+          <Item prendas={item}/>
+          </Grid>
+
+
+         )
+
+     })}
+
+     </Grid>
   </div>
 
   );
  
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*import React from 'react'
-import ItemCount from './ItemCount'
-
-
-export default function ItemList({}) {
-
-  const onAdd = (cantidad)=>{
-
-    alert(`Compraste ${cantidad} prendas`);
-    
-  }
-  
-  return (
-    <div>
-    <ItemCount initial={0} stock={6} onAdd={onAdd}/>
-    </div>
-  )
-}
-*/
