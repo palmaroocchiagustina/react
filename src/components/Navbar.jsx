@@ -10,11 +10,12 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
 import CartWidget from './CartWidget';
-
+import { Link } from "react-router-dom";
 
 const pages = [
-  {label: "Productos", link:"/productos"},
-  {label: "Contacto", link:"/contacto"},
+  {label: "Indumentaria", link:"/categoria/indumentaria"},
+  {label: "Calzado", link:"/categoria/calzado"},
+  {label: "Contacto", link:"/"},
 
 ];
 
@@ -70,7 +71,7 @@ export default function Navbar({color}) {
               color="inherit"
               
             >
-              
+          
               <MenuIcon />
             </IconButton>
             <Menu
@@ -91,10 +92,11 @@ export default function Navbar({color}) {
                 display: { xs: 'block', md: 'none' },
               }}
             >
+     
               {pages.map((page) => (
                 <MenuItem  key={page.label} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">
-                  <a href=  {page.link}>{page.label}</a>
+                  <Link to={page.link}>{page.label}/</Link>
                  </Typography>
                 </MenuItem>
               ))}
@@ -133,6 +135,7 @@ export default function Navbar({color}) {
             ))}
           
          <CartWidget/>
+        
          </Box>
         </Toolbar>
       </Container>

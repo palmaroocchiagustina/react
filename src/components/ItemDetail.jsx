@@ -1,38 +1,44 @@
-import React ,{useState, useEffect} from 'react'
-import Item from './Item'
+import React from 'react'
+
+export default function ItemDetail({producto}) {
+  return (
+    <div>
+    {
+      producto.id ? (
+        <>
+          {producto.imagen + producto.nombre + producto.precio + producto.categoria + producto.id}
+        </>
+
+      ): <>Loading...</>}
+  </div>
+  )
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*import React from 'react'
+//import ItemDetail from './ItemDetail'
+import ItemDetailContainer from './ItemDetailContainer'
 
 export default function ItemDetail() {
 
-  const [producto, setProducto] = useState([]);
-
-  useEffect( () => {
   
-    fetch("/datadetail.json")
-   .then(res=>res.json())
-    .then((resJson) =>{
+  return (
+    <div>
+      <ItemDetailContainer/>
+    </div>
+  )
+}
+*/
 
-  setTimeout(() => {
-    
-    setProducto(resJson);
-   }, 2000);
-   })
-   .catch((e)=>{
-    console.log(e);
-   })
-   .finally(()=>{
-  console.log("finish");
-   })
-},[])
-
-console.log(producto);
- return (
-  <div>
-  {producto.map( (item)=>(
-
-  <div className="cards" key={item.id}>
-   <Item imagen={item.imagen} nombre={item.nombre} precio={item.precio} id={item.id}/>
-   </div>
-  ))}
-  </div>
-)}
- 
