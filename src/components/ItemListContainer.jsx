@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./ItemListContainer";
-import {prendas} from "./data"
+import {prendas} from "../data/data"
 import ItemList from "./ItemList";
 
 export default function ItemListContainer() {

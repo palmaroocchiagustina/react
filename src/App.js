@@ -7,6 +7,7 @@ import ItemDetailContainer from "./components/ItemDetailContainer";
 import Navbar from "./components/Navbar";
 
 export default function App() {
+
   return (
     <BrowserRouter>
       <Navbar  color={"black"}/>

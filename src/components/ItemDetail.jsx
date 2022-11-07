@@ -3,31 +3,44 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import "../styles/Item.css"
+import ItemCount from './ItemCount';
 
-export default function ItemDetail({prendas}) {
+export default function ItemDetail({producto}) {
+  
+  const onAdd = (cantidad) =>{
+    alert(`Compraste ${cantidad} unidades`)
+  }
+  
+  
   return (
     <Card sx={{ maxWidth: 345 }} >
       <CardMedia
         component="img"
-        alt="green iguana"
+        alt="imagen"
         height="350"
-        image={prendas.imagen}
+        image={producto.imagen}
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-        {prendas.nombre}
+        {producto.nombre}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-        ${prendas.precio}
+        ${producto.precio}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          This impressive paella is a perfect party dish and a fun meal to cook
+          together with your guests. Add 1 cup of frozen peas along with the mussels,
+          if you like.
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Comprar</Button>
+         <ItemCount initial = {1} stock={5} onAdd={onAdd}/>
+        
       </CardActions>
     </Card>
+    
   );
 }
 

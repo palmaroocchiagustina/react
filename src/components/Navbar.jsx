@@ -15,7 +15,6 @@ import { Link } from "react-router-dom";
 const pages = [
   {label: "Indumentaria", link:"/categoria/indumentaria"},
   {label: "Calzado", link:"/categoria/calzado"},
-  {label: "Contacto", link:"/"},
 
 ];
 
@@ -128,8 +127,7 @@ export default function Navbar({color}) {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block', fontSize: 15 }}
               >
-              <a className='appbar' href= {page.link}> {page.label}</a>
-                
+              <Link className='appbar' to={page.link}>{page.label}</Link>
                
               </Button>
             ))}

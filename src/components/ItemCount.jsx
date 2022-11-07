@@ -1,9 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import Button from '@mui/material/Button';
-
-
+import "../styles/Itemcount.css"
 export default function ItemCount({initial, stock, onAdd}) {
-
 
   const [contador, setContador]= useState(initial);
 
@@ -23,9 +21,10 @@ export default function ItemCount({initial, stock, onAdd}) {
   
   return (
     <>
-    <div>
+    <div className='itemcount'>
     <Button variant="contained" disabled = {contador >= stock} onClick={sumarStock}> + </Button>
-    <div><p>Contador {contador}</p></div>
+  
+    <div><p>{contador}</p></div>
     <Button variant="outlined" disabled = {contador <= 0 } onClick={restarStock}>-</Button></div>
     <div>
     <Button variant="contained" disabled = {stock <= 0 || contador <= 0} onClick = {()=> onAdd(contador)}> Agregar al carrito</Button>
