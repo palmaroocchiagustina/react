@@ -24,7 +24,7 @@ export default function ItemDetailContainer() {
           setProducto(aux); 
         
         });
-      })
+      },[iditem])
   
       return (
 
