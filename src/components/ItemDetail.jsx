@@ -25,18 +25,17 @@ export default function ItemDetail({producto}) {
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
         {producto.nombre}
+        
         </Typography>
+        <Typography gutterBottom variant="h5" component="div">
+         Categoria {producto.categoria}
+         </Typography>
         <Typography variant="body2" color="text.secondary">
         ${producto.precio}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the mussels,
-          if you like.
-        </Typography>
       </CardContent>
       <CardActions>
-         <ItemCount initial = {1} stock={5} onAdd={onAdd}/>
+         <ItemCount initial = {1} stock={10} onAdd={onAdd}/>
         
       </CardActions>
     </Card>
