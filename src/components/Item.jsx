@@ -13,7 +13,7 @@ export default function ImgMediaCard({prendas}) {
     <Card sx={{ maxWidth: 345 }} >
       <CardMedia
         component="img"
-        alt="green iguana"
+        alt="imagen"
         height="350"
         image={prendas.imagen}
       />

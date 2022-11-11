@@ -3,19 +3,25 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
-
 import Navbar from "./components/Navbar";
+import ContextContainer  from "./components/ContextContainer";
+
+
 
 export default function App() {
 
   return (
     <BrowserRouter>
+     
+      <ContextContainer>
       <Navbar  color={"black"}/>
       <Routes>
         <Route path="/" element={<ItemListContainer />} />
         <Route path="/categoria/:idcategoria" element={<ItemListContainer />} />
         <Route path="/item/:iditem" element={<ItemDetailContainer />} />
+         <Route path="/cart" element={<ItemDetailContainer/>}/>
       </Routes>
+      </ContextContainer>
       <Footer />
     </BrowserRouter>
   );

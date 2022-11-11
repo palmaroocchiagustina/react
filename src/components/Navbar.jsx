@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 const pages = [
   {label: "Indumentaria", link:"/categoria/indumentaria"},
   {label: "Calzado", link:"/categoria/calzado"},
-
+  
 ];
 
 export default function Navbar({color}) {
@@ -132,8 +132,9 @@ export default function Navbar({color}) {
               </Button>
             ))}
           
-         <CartWidget/>
-        
+         <CartWidget />
+         
+          
          </Box>
         </Toolbar>
       </Container>

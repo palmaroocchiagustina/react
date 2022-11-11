@@ -6,15 +6,26 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import "../styles/Item.css"
 import ItemCount from './ItemCount';
-
+import { useState, useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { contextoGeneral } from './ContextContainer';
 export default function ItemDetail({producto}) {
-  
-  const onAdd = (cantidad) =>{
-    alert(`Compraste ${cantidad} unidades`)
+
+ // const {agregarCart, setAgregarCart} = useContext(contextoGeneral);
+  const [agregarCart, setAgregarCart] = useState();
+  const { pushCart } = useContext(contextoGeneral);
+  const onAdd = (x, quantity) =>{
+    
+     setAgregarCart(x)
+     pushCart(producto, quantity);
+   // alert("Compraste " +  x + " unidades " + producto.nombre);
   }
   
   
   return (
+
+    <div>
+    {producto.id ?(
     <Card sx={{ maxWidth: 345 }} >
       <CardMedia
         component="img"
@@ -33,13 +44,23 @@ export default function ItemDetail({producto}) {
         <Typography variant="body2" color="text.secondary">
         ${producto.precio}
         </Typography>
+        <Typography variant="body2" color="text.secondary">
+        Stock: {producto.stock}
+        </Typography>
       </CardContent>
       <CardActions>
-         <ItemCount initial = {1} stock={10} onAdd={onAdd}/>
+         {
+          agregarCart ? <Link to ='/cart'>Terminar compra</Link>
+          : <ItemCount initial = {1} stock={producto.stock} onAdd={onAdd}/>
+
+         }
         
       </CardActions>
     </Card>
-    
+    ) : (
+      <>Loading...</>
+    )}
+    </div>
   );
 }
 

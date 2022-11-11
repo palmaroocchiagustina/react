@@ -6,6 +6,8 @@ export const prendas = [
        precio:3000,
        categoria:"indumentaria",
       id:1,
+      stock: 10
+
     },
     {
        imagen:"../img/jeans.jpg",
@@ -13,6 +15,7 @@ export const prendas = [
        precio:10000,
        categoria:"indumentaria",
         id:2,
+        stock: 10
     },
     {
        imagen:"../img/campera.jpg",
@@ -20,6 +23,7 @@ export const prendas = [
        precio:12000,
        categoria:"indumentaria",
         id:3,
+        stock: 10
     },
     {
       imagen:"../img/blazer.jpg",
@@ -27,6 +31,7 @@ export const prendas = [
       precio:20000,
       categoria:"indumentaria",
       id:4,
+      stock: 10
    },
     {
        imagen:"../img/zapatillas1.jpg",
@@ -34,6 +39,7 @@ export const prendas = [
        precio:20000,
        categoria:"calzado",
        id:5,
+       stock: 10
     },
     {
       imagen:"../img/zapatillas2.jpg",
@@ -41,6 +47,7 @@ export const prendas = [
       precio:20000,
       categoria:"calzado",
       id:6,
+      stock: 10
    },
    {
       imagen:"../img/zapatillas3.jpg",
@@ -48,6 +55,7 @@ export const prendas = [
       precio:20000,
       categoria:"calzado",
       id:7,
+      stock: 10
    },
    {
       imagen:"../img/zapatillas4.jpg",
@@ -55,5 +63,6 @@ export const prendas = [
       precio:20000,
       categoria:"calzado",
       id:8,
+      stock: 10
    }
  ]
