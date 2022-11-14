@@ -1,5 +1,4 @@
-import React, { useState, createContext } from "react";
-import { prendas } from "../data/data.js"
+import React, { useState, createContext, useEffect } from "react";
 export const contextoGeneral = createContext();
 
 
@@ -16,8 +15,17 @@ const verificacionCart = (id) => carrito.find( prendas => prendas.id === id ) ? 
 : false;
 
 // limpiar por producto
+ 
+//const remuvePrenda = (id) => setCarrito(carrito.filter(prendas.id !== id))
 
-const remuvePrenda = (id) => setCarrito(carrito.filter(prendas.id !== id));
+
+
+const remuvePrenda = (id) => {
+  
+ let indice = carrito.findIndex(prendas=>prendas.id=== id);
+ setCarrito(carrito.splice(indice.id, 1));
+
+}
 
 // add cart
 
@@ -34,30 +42,21 @@ if(product){
 }
 setCarrito(newCart)
 }
+// total productos
 
-/*const pushCart = (item, quantity) =>{
-  
-  if (verificacionCart(item.id)){
-    setCarrito(carrito.map(prod =>{
-      return prod.id === item.id ? {...prod, quantity: prod.quantity + quantity} : prod
-    }));
+const totalPrendas = () => carrito.reduce((acumulador, prendaAactual)=> acumulador + prendaAactual.quantity, 0);
 
-  }else {
-    setCarrito([...carrito, {...item, quantity }])
-  }
+// total precio
+
+const totalPrecio = () => {
+
+return carrito.reduce((acum, act) => acum + act.quantity * act.precio, 0)
+
+
 }
 
 
-/*const pushCart = (item, newQuantity) => {
-
-const newCart = carrito.filter(prod => prod.id !== item.id)
-newCart.push ({...item, quantity: newQuantity});
-setCarrito(newCart);
-
-}*/
  console.log('carrito:', carrito);
-
- 
 
   return (
     <contextoGeneral.Provider value={{  
@@ -65,6 +64,10 @@ setCarrito(newCart);
       verificacionCart,
       remuvePrenda, 
       pushCart, 
+      totalPrendas,
+      totalPrecio,
+      carrito, 
+      setCarrito
        }}>
       {children}
     </contextoGeneral.Provider>

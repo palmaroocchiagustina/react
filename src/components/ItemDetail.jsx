@@ -8,17 +8,21 @@ import "../styles/Item.css"
 import ItemCount from './ItemCount';
 import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
+
+
+
 import { contextoGeneral } from './ContextContainer';
+
 export default function ItemDetail({producto}) {
 
- // const {agregarCart, setAgregarCart} = useContext(contextoGeneral);
-  const [agregarCart, setAgregarCart] = useState();
+  const [agregarCart, setAgregarCart] = useState(false);
   const { pushCart } = useContext(contextoGeneral);
-  const onAdd = (x, quantity) =>{
+  
+  const onAdd = (quantity) =>{
     
-     setAgregarCart(x)
+     setAgregarCart(true);
      pushCart(producto, quantity);
-   // alert("Compraste " +  x + " unidades " + producto.nombre);
+   
   }
   
   
@@ -50,12 +54,12 @@ export default function ItemDetail({producto}) {
       </CardContent>
       <CardActions>
          {
-          agregarCart ? <Link to ='/cart'>Terminar compra</Link>
-          : <ItemCount initial = {1} stock={producto.stock} onAdd={onAdd}/>
+          agregarCart  ? <Link to ='/cart'>Ver el carrito</Link>
+        : <ItemCount initial = {1} stock={producto.stock} onAdd={onAdd}/>
 
          }
-        
       </CardActions>
+     
     </Card>
     ) : (
       <>Loading...</>

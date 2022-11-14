@@ -5,7 +5,8 @@ import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import Navbar from "./components/Navbar";
 import ContextContainer  from "./components/ContextContainer";
-
+import ItemDetail from "./components/ItemDetail";
+import Cart from "./components/Cart";
 
 
 export default function App() {
@@ -19,7 +20,7 @@ export default function App() {
         <Route path="/" element={<ItemListContainer />} />
         <Route path="/categoria/:idcategoria" element={<ItemListContainer />} />
         <Route path="/item/:iditem" element={<ItemDetailContainer />} />
-         <Route path="/cart" element={<ItemDetailContainer/>}/>
+        <Route path="/cart" element={<Cart/>}/>
       </Routes>
       </ContextContainer>
       <Footer />
