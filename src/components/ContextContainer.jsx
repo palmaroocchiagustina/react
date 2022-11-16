@@ -1,4 +1,4 @@
-import React, { useState, createContext, useEffect } from "react";
+import React, { useState, createContext } from "react";
 export const contextoGeneral = createContext();
 
 
@@ -16,16 +16,7 @@ const verificacionCart = (id) => carrito.find( prendas => prendas.id === id ) ? 
 
 // limpiar por producto
  
-//const remuvePrenda = (id) => setCarrito(carrito.filter(prendas.id !== id))
-
-
-
-const remuvePrenda = (id) => {
-  
- let indice = carrito.findIndex(prendas=>prendas.id=== id);
- setCarrito(carrito.splice(indice.id, 1));
-
-}
+const remuvePrenda = (id) => setCarrito(carrito.filter((prendas)=>prendas.id !== id))
 
 // add cart
 

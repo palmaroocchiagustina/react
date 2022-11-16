@@ -1,0 +1,9 @@
+.appbar{
+    display: flex;
+    justify-content: flex-end;
+    gap: 4vw;
+    padding: 1.5vw;
+    text-decoration: none;
+    color: white;  
+  }
+ 

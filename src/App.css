@@ -37,12 +37,5 @@
   }
 }
 
-.appbar{
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 2vw;
-  padding: 1.5vw;
-  text-decoration: none;
-  color: white;  
-}
+
 

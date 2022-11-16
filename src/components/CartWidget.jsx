@@ -4,6 +4,8 @@ import { styled } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { contextoGeneral } from './ContextContainer';
+import { Link } from 'react-router-dom';
+import '../styles/appBar.css'
 
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
@@ -16,10 +18,16 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 }));
 
 export default function CartWidget() {
+ const {totalPrendas} = React.useContext(contextoGeneral)
+
+
+
   return (
-    <IconButton aria-label="cart" color="secondary">
-      <StyledBadge badgeContent={1} color="secondary">
+    <IconButton style={{color: 'white'}} className='cart' aria-label="cart" >
+      <StyledBadge  >
         <ShoppingCartIcon />
+        <span>{totalPrendas()|| ''}</span>
+        
       </StyledBadge>
     </IconButton>
   );

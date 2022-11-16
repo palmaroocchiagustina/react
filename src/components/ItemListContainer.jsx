@@ -32,7 +32,7 @@ export default function ItemListContainer() {
 
   return (
     <div>
-  <ItemList productos={productos}/>;
+  <ItemList productos={productos}/>
   </div>
   );
 }

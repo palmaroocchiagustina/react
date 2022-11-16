@@ -11,12 +11,13 @@ import Typography from '@mui/material/Typography';
 import * as React from 'react';
 import CartWidget from './CartWidget';
 import { Link } from "react-router-dom";
-import { GifBoxTwoTone } from '@mui/icons-material';
+import '../styles/appBar.css';
 
 const pages = [
   {label: "Indumentaria", link:"/categoria/indumentaria"},
   {label: "Calzado", link:"/categoria/calzado"},
- 
+ // {label: <CartWidget/>, link:"/cart"},
+
   
 ];
 
@@ -134,11 +135,12 @@ export default function Navbar({color}) {
               </Button>
             ))}
             </Box>
-          <Box>
-           
-          <CartWidget/>
+          <Box sx={{ flexGrow: 0 }}>
           
-         </Box>
+            <Link to='/cart'><CartWidget/></Link>
+        
+
+           </Box>
         </Toolbar>
       </Container>
     </AppBar>

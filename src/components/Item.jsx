@@ -6,9 +6,9 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
-import "../styles/Item.css"
+import "../styles/Item.css";
 
-export default function ImgMediaCard({prendas}) {
+export default function Item({prendas}) {
   return (
     <Card sx={{ maxWidth: 345 }} >
       <CardMedia
@@ -31,7 +31,6 @@ export default function ImgMediaCard({prendas}) {
         Ver detalles
         </Link>
         </Button>
-        <Button size="small">Comprar</Button>
       </CardActions>
     </Card>
   );

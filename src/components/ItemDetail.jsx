@@ -8,6 +8,8 @@ import "../styles/Item.css"
 import ItemCount from './ItemCount';
 import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import Stack from '@mui/material/Stack';
+import CircularProgress from '@mui/material/CircularProgress';
 
 
 
@@ -62,7 +64,10 @@ export default function ItemDetail({producto}) {
      
     </Card>
     ) : (
-      <>Loading...</>
+    //  <>Loading...</>
+    <Stack sx={{ color: 'grey.500' }} spacing={2} direction="row">
+      <CircularProgress color="inherit" />
+    </Stack>
     )}
     </div>
   );
