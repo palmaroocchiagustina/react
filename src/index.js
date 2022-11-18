@@ -4,6 +4,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { initializeApp } from "firebase/app";
+initializeApp( {
+  apiKey: "AIzaSyDbZPcRgIUuGwbTCiYpgSy7E1OfAYxTVk8",
+  authDomain: "react-chill-out.firebaseapp.com",
+  projectId: "react-chill-out",
+  storageBucket: "react-chill-out.appspot.com",
+  messagingSenderId: "439437240753",
+  appId: "1:439437240753:web:12d4d0be076864c4763590",
+  measurementId: "G-32W2NMBJZ4"
+});
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   
