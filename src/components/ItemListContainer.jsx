@@ -21,9 +21,11 @@ const productos = collection(db, 'productos');
 getDocs(productos).then((res)=>{
 
  const arrayNorm =  res.docs.map((doc) =>{
-    return{ imagenURL: doc.data().imagenURL, nombre: doc.data().nombre, categoria:doc.data().categoria ,precio:doc.data().precio, id:doc.id ,stock: doc.data().stock}
+    return{ imagen: doc.data().imagen, nombre: doc.data().nombre, categoria:doc.data().categoria ,precio:doc.data().precio, id:doc.id ,stock: doc.data().stock}
+  
   });
   console.log(arrayNorm);
+
   if (idcategoria) {
    setProductos(arrayNorm.filter((item) => item.categoria === idcategoria));
   } else {

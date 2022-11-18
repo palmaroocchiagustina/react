@@ -9,14 +9,18 @@ import { Link } from 'react-router-dom';
 import "../styles/Item.css";
 
 export default function Item({prendas}) {
+  console.log(prendas.imagen) 
   return (
     <Card sx={{ maxWidth: 345 }} >
       <CardMedia
         component="img"
         alt="imagen"
         height="350"
-        image={prendas.imagen}
+        src=""
+        imagen={prendas.imagen}
+        
       />
+    
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
         {prendas.nombre}
