@@ -1,0 +1,20 @@
+.cart{
+    display: grid;
+    justify-items: center;
+      align-items: baseline;
+     padding: 2rem;
+      gap: 2rem;
+
+}
+
+.total{
+
+    display: flex;
+    justify-content: space-around;
+}
+
+.button{
+
+    gap: 2rem;
+    display: flex;
+}

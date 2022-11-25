@@ -12,13 +12,13 @@ import * as React from 'react';
 import CartWidget from './CartWidget';
 import { Link } from "react-router-dom";
 import '../styles/appBar.css';
+import '../styles/link.css';
 
 const pages = [
+  {label: "Inicio", link:"/"},
   {label: "Indumentaria", link:"/categoria/indumentaria"},
   {label: "Calzado", link:"/categoria/calzado"},
- // {label: <CartWidget/>, link:"/cart"},
-
-  
+  {label: "Checkout", link:"/Checkout"},
 ];
 
 export default function Navbar({color}) {
@@ -98,7 +98,7 @@ export default function Navbar({color}) {
               {pages.map((page) => (
                 <MenuItem  key={page.label} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">
-                  <Link to={page.link}>{page.label}/</Link>
+                  <Link className='menu__burguer' to={page.link}>{page.label}</Link>
                  </Typography>
                 </MenuItem>
               ))}
@@ -107,8 +107,8 @@ export default function Navbar({color}) {
           <Typography
             variant="h5"
             noWrap
-            component="a"
-            href=""
+            //component="a"
+            //href="/"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
@@ -120,7 +120,7 @@ export default function Navbar({color}) {
               textDecoration: 'none',
             }}
           >
-            CHILL OUT
+           <Link className='link' to="/">CHILL OUT</Link> 
           
           </Typography>
           <Box className='appbar' sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>

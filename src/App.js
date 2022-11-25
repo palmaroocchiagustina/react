@@ -5,16 +5,15 @@ import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import Navbar from "./components/Navbar";
 import ContextContainer  from "./components/ContextContainer";
-import ItemDetail from "./components/ItemDetail";
 import Cart from "./components/Cart";
+import Checkout from "./components/Checkout";
 
 
 export default function App() {
 
   return (
     <BrowserRouter>
-     
-      <ContextContainer>
+     <ContextContainer>
       <Navbar  color={"black"}/>
       <Routes>
         <Route path="/" element={<ItemListContainer />} />
@@ -22,8 +21,8 @@ export default function App() {
         <Route path="/item/:iditem" element={<ItemDetailContainer />} />
         <Route path="/cart" element={<Cart/>}/>
         <Route path="/cart" element={<Navbar/>}/>
-
-      </Routes>
+        <Route path="/checkout" element={<Checkout />} />
+        </Routes>
       </ContextContainer>
       <Footer />
     </BrowserRouter>

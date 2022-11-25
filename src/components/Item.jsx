@@ -3,22 +3,30 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
 import "../styles/Item.css";
+import { Button } from '@mui/material';
+import { grey } from '@mui/material/colors';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 export default function Item({prendas}) {
-  console.log(prendas.imagen) 
+
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: grey[900],
+      }
+    },
+  });
+
   return (
     <Card sx={{ maxWidth: 345 }} >
       <CardMedia
         component="img"
         alt="imagen"
         height="350"
-        src=""
-        imagen={prendas.imagen}
-        
+        src={prendas.imagen}        
       />
     
       <CardContent>
@@ -30,11 +38,9 @@ export default function Item({prendas}) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">
-        <Link to={`/item/${prendas.id}`}>
-        Ver detalles
-        </Link>
-        </Button>
+      <ThemeProvider theme={theme}>
+      <Button variant="contained"><Link className='link' to={`/item/${prendas.id}`}>+ info</Link></Button>
+      </ThemeProvider>
       </CardActions>
     </Card>
   );

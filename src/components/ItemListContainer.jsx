@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./ItemListContainer";
 import ItemList from "./ItemList";
-import {getFirestore, collection, getDocs} from 'firebase/firestore';
+import {getFirestore, collection, getDocs, query, where} from 'firebase/firestore';
 
 
 
@@ -16,7 +16,12 @@ export default function ItemListContainer() {
  useEffect(() => {
 
 const db = getFirestore();
-const productos = collection(db, 'productos');
+let productos;
+if (idcategoria) {
+  productos = query(collection(db, 'productos'), where('categoria', '==', idcategoria));
+} else {
+  productos = collection(db, 'productos');
+}
 
 getDocs(productos).then((res)=>{
 
@@ -25,14 +30,10 @@ getDocs(productos).then((res)=>{
   
   });
   console.log(arrayNorm);
-
-  if (idcategoria) {
-   setProductos(arrayNorm.filter((item) => item.categoria === idcategoria));
-  } else {
-     setProductos(arrayNorm);
-   }
-}) 
-}, [idcategoria]);
+  setProductos(arrayNorm);
+ 
+});
+},[idcategoria]);
 
   return (
     <div>
@@ -40,7 +41,4 @@ getDocs(productos).then((res)=>{
   </div>
   );
 }
-
-
-
 

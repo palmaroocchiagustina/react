@@ -22,11 +22,9 @@ export default function ItemList({productos}) {
           <Grid item xs={12} sm={6} md={4} key={item.id} >
           <Item prendas={item}/>
           </Grid>
+         );
 
-
-         )
-
-     })}
+     })};
 
      </Grid>
   </div>
