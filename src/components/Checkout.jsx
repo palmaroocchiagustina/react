@@ -1,22 +1,12 @@
-import { Button } from '@mui/material'
-import React, { useContext, useState,handleInputChange, handleSubmit} from 'react'
+import React, { useContext, useState, handleSubmit} from 'react'
 import { contextoGeneral } from '../components/ContextContainer'
 import {addDoc, doc , updateDoc ,collection, getFirestore} from 'firebase/firestore';
 import { increment } from 'firebase/firestore';
-import { grey } from '@mui/material/colors';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 import '../styles/form.css';
 
 
 export default function Checkout() {
 
-  const theme = createTheme({
-    palette: {
-      primary: {
-        main: grey[900],
-      }
-    },
-  });
   
   const {carrito, totalAPagar, limpiarCart } = useContext(contextoGeneral)
  
@@ -63,7 +53,7 @@ export default function Checkout() {
     {pedidoInsertado ? (
       "Gracias por su compra!. Revisa tu correo para obtener los datos de entrega. El numero de tu pedido es : " + pedidoInsertado.id
     ) : (
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={validarForm}>
                         <input
                             type="text"
                             name="Nombre"
@@ -96,11 +86,9 @@ export default function Checkout() {
                             type="submit"
                             value="TERMINAR COMPRA"
                             className="btn btn-success"
-                            onClick={validarForm}
+                           
                         />
-
-                        
-           </form>
+                          </form>
 
                            )}</div>
                     )
