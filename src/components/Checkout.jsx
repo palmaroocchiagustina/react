@@ -61,7 +61,7 @@ export default function Checkout() {
     
     <div className='form'>
     {pedidoInsertado ? (
-      <h3>Gracias por su compra!. Revisa tu correo para obtener los datos de entrega.</h3>
+      "Gracias por su compra!. Revisa tu correo para obtener los datos de entrega. El numero de tu pedido es : " + pedidoInsertado.id
     ) : (
       <form onSubmit={handleSubmit}>
                         <input
@@ -79,7 +79,6 @@ export default function Checkout() {
                             placeholder="Email"
                             value={email}
                             onChange={(e)=> setEmail(e.target.value)}
-
                             required
                         />
                         <br />
@@ -93,11 +92,15 @@ export default function Checkout() {
                             required
                         />
                         <br /><br />
-                        <ThemeProvider theme={theme}>
-                        <Button  variant="contained" onClick={validarForm}>TERMINAR COMPRA</Button>
-                        </ThemeProvider>
+                        <input
+                            type="submit"
+                            value="TERMINAR COMPRA"
+                            className="btn btn-success"
+                            onClick={validarForm}
+                        />
+
                         
-                             </form>
+           </form>
 
                            )}</div>
                     )
