@@ -1,6 +1,7 @@
 Proyecto Final React JS - CoderHouse
 CHILL OUT Ropa de diseño
 Por Agustina Palmarocchi - Comisión 44970
+
 Aplicación Web Ecommerce desarrollada con React JS, MUI y Firebase.
 
 
