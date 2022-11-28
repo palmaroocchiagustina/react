@@ -29,7 +29,6 @@ getDocs(productos).then((res)=>{
     return{ imagen: doc.data().imagen, nombre: doc.data().nombre, categoria:doc.data().categoria ,precio:doc.data().precio, id:doc.id ,stock: doc.data().stock}
   
   });
-  console.log(arrayNorm);
   setProductos(arrayNorm);
  
 });

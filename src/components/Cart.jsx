@@ -28,10 +28,10 @@ const {carrito, totalPrecio, limpiarCart} = useContext(contextoGeneral);
 
     <Stack sx={{ width: '100%' }} spacing={2}>
     
-    <Alert className='alert' variant="outlined" severity="info">
+    <Alert className='alert' variant="filled"  severity="info">
       <AlertTitle>Info</AlertTitle>
       No hay productos en el carrito.
-      <Link to='/'>Ver prendas</Link>
+      <Link className='link'  to='/'> Ver prendas</Link>
     </Alert>
     
   </Stack>

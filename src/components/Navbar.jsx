@@ -23,22 +23,17 @@ const pages = [
 
 export default function Navbar({color}) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
+ 
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+
 
   return (
     <AppBar position="static" className='appbar' style={{backgroundColor: color}} >
@@ -107,8 +102,6 @@ export default function Navbar({color}) {
           <Typography
             variant="h5"
             noWrap
-            //component="a"
-            //href="/"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },

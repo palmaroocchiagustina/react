@@ -18,3 +18,8 @@
     gap: 2rem;
     display: flex;
 }
+.link{
+
+    color: white;
+    text-decoration: none;
+}

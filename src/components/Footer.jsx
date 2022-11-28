@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
-import '../styles/Footer.css'
+import '../styles/Footer.css';
 
 export default function Footer() {
   return (
