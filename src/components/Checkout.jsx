@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 export default function Checkout() {
 
   
-  const {carrito, totalAPagar, limpiarCart } = useContext(contextoGeneral)
+  const {carrito,totalPrecio, limpiarCart } = useContext(contextoGeneral)
  
   const [ nombre, setNombre] = useState("");
   const [ telefono, setTelefono] = useState("");
@@ -31,7 +31,7 @@ export default function Checkout() {
             precio: producto.precio,
             quantity: producto.quantity,
         })),
-        total: totalAPagar,
+        total: totalPrecio,
         };
 
   console.log(pedido);
@@ -45,6 +45,7 @@ export default function Checkout() {
  
    setPedidoInsertado(pedidoInsertado);
    limpiarCart();
+  
 
     carrito.forEach(item => {
       const documento = doc(db, 'productos', item.id);
@@ -72,7 +73,10 @@ export default function Checkout() {
       </Alert>
     </Stack>
     ) : (
-      <form onSubmit={validarForm}>  
+      <form onSubmit={validarForm}> 
+                        <h3>
+                        Total de tu compra: $ {totalPrecio()}
+                        </h3> 
                         <input
                             type="text"
                             name="Nombre"
@@ -100,6 +104,7 @@ export default function Checkout() {
 
                             required
                         />
+
                         <br /><br />
                         <button
                         type='submit'
