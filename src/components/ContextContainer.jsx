@@ -49,7 +49,7 @@ return carrito.reduce((acum, act) => acum + act.quantity * act.precio, 0)
 
 useEffect(()=>{
 
-  const total =  carrito.reduce((acum, act) => acum + act.quantity * act.precio, 0)
+ const total =  carrito.reduce((acum, act) => acum + act.quantity * act.precio, 0)
   setTotalAPagar(total);
   localStorage.setItem("carrito", JSON.stringify(carrito));
 

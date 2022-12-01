@@ -31,7 +31,7 @@ export default function Checkout() {
             precio: producto.precio,
             quantity: producto.quantity,
         })),
-        total: totalPrecio,
+        total: totalPrecio(),
         };
 
   console.log(pedido);
@@ -41,9 +41,9 @@ export default function Checkout() {
  
  
   addDoc(pedidos, pedido)
-  .then((pedidoInsertado)=>{
+  .then(({id})=>{
  
-   setPedidoInsertado(pedidoInsertado);
+   setPedidoInsertado((id));
    limpiarCart();
   
 
@@ -61,7 +61,7 @@ export default function Checkout() {
     {pedidoInsertado ? (
       <Stack sx={{ width: '100%' }} spacing={2}>
       <Alert variant="filled" severity="success">
-      Gracias por su compra!. Revisa tu correo para obtener los datos de entrega. El numero de tu pedido es :  + { pedidoInsertado.id}. 
+      Gracias por su compra!. Revisa tu correo para obtener los datos de entrega. El numero de tu pedido es :  + { pedidoInsertado}. 
       {
     <Button color="inherit" size="small" >
       <Link className='link' to="/">  SEGUIR COMPRANDO</Link> 
